@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Oyunu</title>
+
+<style>
+body {
+  background: #ffe6f0;
+  font-family: Arial;
+  text-align: center;
+  margin-top: 120px;
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#yes { background:#ff4d88; color:white; }
+#no { background:#cccccc; }
+
+img {
+  width: 300px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="text">Will you be my Valentine? 💘</h1>
+
+<button id="yes">YES 💖</button>
+<button id="no">NO 😈</button>
+
+<script>
+var messages = [
+"Emin misin? 😢",
+"Gerçekten emin misin? 🥺",
+"Son kararın mı? 💔",
+"Bir daha düşün 😭"
+];
+
+var i = 0;
+var size = 20;
+
+document.getElementById("no").onclick = function() {
+  document.getElementById("text").innerHTML = messages[i % messages.length];
+  i++;
+  size += 6;
+  document.getElementById("yes").style.fontSize = size + "px";
+};
+
+document.getElementById("yes").onclick = function() {
+  document.body.innerHTML = `
+    <h1>Dudu 💞 Bubu</h1>
+    <h2>Valentine olduk 😍</h2>
+    <img src="dudu-bubu.jpg">
+  `;
+};
+</script>
+
+</body>
+</html>
